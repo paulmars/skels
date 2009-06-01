@@ -1,13 +1,11 @@
 Skels
 =====
 
-Introduction goes here.
-
+Rspec scaffold with some minor modifications
 
 Example
 =======
 
-Example goes here.
-
+./script/generator skel_scaffold user name:string 
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
