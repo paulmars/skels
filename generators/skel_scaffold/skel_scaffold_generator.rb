@@ -81,7 +81,7 @@ class SkelScaffoldGenerator < Rails::Generator::NamedBase
 
       for action in scaffold_views
         m.template(
-          "skel_views:view_#{action}.#{@default_file_extension}",
+          "skel_scaffold:view_#{action}.#{@default_file_extension}",
           File.join('app/views', controller_class_path, controller_file_name, "#{action}.#{default_file_extension}")
         )
       end
