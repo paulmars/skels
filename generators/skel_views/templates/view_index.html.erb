@@ -1,0 +1,20 @@
+<h1>Listing <%= plural_name %></h1>
+
+<% for attribute in attributes -%>
+  <%= attribute.column.human_name %>
+<% end -%>
+
+<%%= link_to 'New <%= singular_name %>', new_<%= singular_name %>_path %>
+
+<div class="<%= plural_name %>">
+<%% @<%= plural_name %>.each do |<%= singular_name %>| %>
+  <div class="<%= singular_name %>">
+<% for attribute in attributes -%>
+    <%%=h <%= singular_name %>.<%= attribute.name %> %>
+<% end -%>
+    <%%= link_to 'Show', <%= singular_name %> %>
+    <%%= link_to 'Edit', edit_<%= singular_name %>_path(<%= singular_name %>) %>
+    <%%= link_to 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+<%% end %>
+</div>
