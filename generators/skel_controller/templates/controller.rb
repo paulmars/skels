@@ -1,5 +1,7 @@
 class <%= controller_class_name %>Controller < ApplicationController
 
+  before_filter :load_<%= file_name %>, :except => [ :show, :edit, :update, :destroy ]
+
   def index
     @<%= table_name %> = <%= class_name %>.all
 
@@ -10,8 +12,6 @@ class <%= controller_class_name %>Controller < ApplicationController
   end
 
   def show
-    @<%= file_name %> = <%= class_name %>.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @<%= file_name %> }
@@ -28,7 +28,6 @@ class <%= controller_class_name %>Controller < ApplicationController
   end
 
   def edit
-    @<%= file_name %> = <%= class_name %>.find(params[:id])
   end
 
   def create
@@ -47,8 +46,6 @@ class <%= controller_class_name %>Controller < ApplicationController
   end
 
   def update
-    @<%= file_name %> = <%= class_name %>.find(params[:id])
-
     respond_to do |format|
       if @<%= file_name %>.update_attributes(params[:<%= file_name %>])
         flash[:notice] = '<%= class_name %> was successfully updated.'
@@ -62,7 +59,6 @@ class <%= controller_class_name %>Controller < ApplicationController
   end
 
   def destroy
-    @<%= file_name %> = <%= class_name %>.find(params[:id])
     @<%= file_name %>.destroy
 
     respond_to do |format|
@@ -70,4 +66,11 @@ class <%= controller_class_name %>Controller < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+protected
+
+  def load_<%= file_name %>
+    @<%= file_name %> = <%= class_name %>.find(params[:id])
+  end
+
 end
