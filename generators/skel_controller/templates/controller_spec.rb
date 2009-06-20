@@ -1,6 +1,6 @@
 class <%= controller_class_name %>Controller < ApplicationController
 
-  before_filter :load_<%= file_name %>, :except => [ :show, :edit, :update, :destroy ]
+  before_filter :load_<%= file_name %>, :only => [ :show, :edit, :update, :destroy ]
 
   def index
     @<%= table_name %> = <%= class_name %>.all
