@@ -1,13 +1,20 @@
 Skels
 =====
 
-Introduction goes here.
+A scaffold that includes a _form, and partial for the user, remote_form, #create.js.rjs template. 
 
+Rspecs for all that stuff.
+
+Controller that has less documentation, more abstraction.
+
+Install
+=======
+
+./script/plugin install git://github.com/paulmars/skels.git
 
 Example
 =======
 
-Example goes here.
-
+./script/generate skel_scaffold user name:string birthday:date cars:integer
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
