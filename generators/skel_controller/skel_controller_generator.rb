@@ -2,6 +2,17 @@ require 'rails_generator/generators/components/controller/controller_generator'
 
 class SkelControllerGenerator < ControllerGenerator
 
+  attr_reader :controller_class_name
+  
+  def initialize(runtime_args, runtime_options = {})
+    super
+
+    @controller_name = @name.pluralize
+
+    base_name, @controller_class_path, @controller_file_path, @controller_class_nesting, @controller_class_nesting_depth = extract_modules(@controller_name)
+    @controller_class_name_without_nesting, @controller_singular_name, @controller_plural_name = inflect_names(base_name)
+  end
+
   def manifest
     record do |m|
       # Check for class naming collisions.
