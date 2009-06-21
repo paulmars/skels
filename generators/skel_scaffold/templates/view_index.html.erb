@@ -21,18 +21,7 @@
 
 <%%= link_to 'New <%= singular_name %>', new_<%= singular_name %>_path %>
 
-<%%= render :partial => "<%= plural_name %>/<%= singular_name %>", :collection => @<%= plural_name %> %>
 
-<div class="<%= plural_name %>">
-  
-<%% @<%= plural_name %>.each do |<%= singular_name %>| %>
-  <div class="<%= singular_name %>">
-<% for attribute in attributes -%>
-    <%%=h <%= singular_name %>.<%= attribute.name %> %>
-<% end -%>
-    <%%= link_to 'Show', <%= singular_name %> %>
-    <%%= link_to 'Edit', edit_<%= singular_name %>_path(<%= singular_name %>) %>
-    <%%= link_to 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-<%% end %>
+<div id="<%= plural_name %>" class="<%= plural_name %>">
+  <%%= render :partial => "<%= plural_name %>/<%= singular_name %>", :collection => @<%= plural_name %> %>
 </div>
