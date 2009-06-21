@@ -38,6 +38,7 @@ class <%= controller_class_name %>Controller < ApplicationController
         flash[:notice] = '<%= class_name %> was successfully created.'
         format.html { redirect_to(@<%= file_name %>) }
         format.xml  { render :xml => @<%= file_name %>, :status => :created, :location => @<%= file_name %> }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @<%= file_name %>.errors, :status => :unprocessable_entity }

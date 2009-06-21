@@ -21,7 +21,10 @@
 
 <%%= link_to 'New <%= singular_name %>', new_<%= singular_name %>_path %>
 
+<%%= render :partial => "<%= plural_name %>/<%= singular_name %>", :collection => @<%= plural_name %> %>
+
 <div class="<%= plural_name %>">
+  
 <%% @<%= plural_name %>.each do |<%= singular_name %>| %>
   <div class="<%= singular_name %>">
 <% for attribute in attributes -%>
