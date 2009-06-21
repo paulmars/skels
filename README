@@ -17,4 +17,4 @@ Example
 
 ./script/generate skel_scaffold user name:string birthday:date cars:integer
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 Paul McKellar, released under the MIT license
