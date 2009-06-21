@@ -70,7 +70,7 @@ class SkelScaffoldGenerator < Rails::Generator::NamedBase
       m.template 'skel_scaffold:controller_spec.rb',
         File.join('spec/controllers', controller_class_path, "#{controller_file_name}_controller_spec.rb")
 
-      m.template "skel_controller:controller.rb",
+      m.template "skel_controller:controller_spec.rb",
         File.join('app/controllers', controller_class_path, "#{controller_file_name}_controller.rb")
 
       m.template 'skel_scaffold:helper_spec.rb',
