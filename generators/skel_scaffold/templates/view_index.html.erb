@@ -4,16 +4,8 @@
 
 <%% remote_form_for(:<%= singular_name %>) do |f| %>
   <%%= f.error_messages %>
-
-<% for attribute in attributes -%>
-  <p>
-    <%%= f.label :<%= attribute.name %> %><br />
-    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-  </p>
-<% end -%>
-  <p>
-    <%%= f.submit 'Create' %>
-  </p>
+  <%%= render :partial => "<%= plural_name %>/form", :locals => { :f => f } %>
+  <%%= f.submit 'Create' %>
 <%% end %>
 
 <% for attribute in attributes -%>

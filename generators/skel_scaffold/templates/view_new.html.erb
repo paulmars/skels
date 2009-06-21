@@ -1,9 +1,13 @@
 <h1>New <%= singular_name %></h1>
 
-<%% form_for(@<%= singular_name %>) do |f| %>
-  <%%= f.error_messages %>
-  <%%= render :partial => "<%= plural_name %>/form", :locals => { :f => f } %>
-  <%%= f.submit 'Create' %>
-<%% end %>
+<div>
+  <%%= link_to 'Back', <%= plural_name %>_path %>  
+</div>
 
-<%%= link_to 'Back', <%= plural_name %>_path %>
+<div>
+  <%% form_for(@<%= singular_name %>) do |f| %>
+    <%%= f.error_messages %>
+    <%%= render :partial => "<%= plural_name %>/form", :locals => { :f => f } %>
+    <%%= f.submit 'Create' %>
+  <%% end %>
+</div>

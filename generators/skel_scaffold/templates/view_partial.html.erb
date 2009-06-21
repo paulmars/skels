@@ -1,11 +1,9 @@
 <div id="<%= singular_name %>-<%%= <%= singular_name %>.id %>" class="<%= singular_name %>">
-
 <% for attribute in attributes -%>
-<%= attribute.column.human_name %>
-    <%%=h <%= singular_name %>.<%= attribute.name %> %>
+  <%= attribute.column.human_name %>
+  <%%=h <%= singular_name %>.<%= attribute.name %> %>
 <% end -%>
-    <%%= link_to 'Show', <%= singular_name %> %>
-    <%%= link_to 'Edit', edit_<%= singular_name %>_path(<%= singular_name %>) %>
-    <%%= link_to 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %>
-
+  <%%= link_to 'Show', <%= singular_name %> %>
+  <%%= link_to 'Edit', edit_<%= singular_name %>_path(<%= singular_name %>) %>
+  <%%= link_to 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %>
 </div>
