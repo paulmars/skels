@@ -1,5 +1,6 @@
 <h1>Listing <%= plural_name %></h1>
 
+<%%= link_to 'New <%= singular_name %>', new_<%= singular_name %>_path %>
 
 <%% remote_form_for(:<%= singular_name %>) do |f| %>
   <%%= f.error_messages %>
@@ -18,9 +19,6 @@
 <% for attribute in attributes -%>
   <%= attribute.column.human_name %>
 <% end -%>
-
-<%%= link_to 'New <%= singular_name %>', new_<%= singular_name %>_path %>
-
 
 <div id="<%= plural_name %>" class="<%= plural_name %>">
   <%%= render :partial => "<%= plural_name %>/<%= singular_name %>", :collection => @<%= plural_name %> %>

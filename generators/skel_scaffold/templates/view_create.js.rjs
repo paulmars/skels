@@ -1,0 +1,2 @@
+page.insert_html :top, "<%= plural_name %>", :partial => "<%= plural_name %>/<%= singular_name %>", :locals => {:<%= singular_name %> => @<%= singular_name %>}
+page.visual_effect :highlight, "<%= singular_name %>-#{@<%= singular_name %>.id}"

@@ -97,6 +97,12 @@ class SkelScaffoldGenerator < Rails::Generator::NamedBase
         "skel_scaffold:view_partial.#{@default_file_extension}",
         File.join('app/views', controller_class_path, controller_file_name, "_#{file_name}.#{default_file_extension}")
       )
+
+      m.template(
+        "skel_scaffold:view_form.#{@default_file_extension}",
+        File.join('app/views', controller_class_path, controller_file_name, "_form.#{default_file_extension}")
+      )
+
       
       # Model class, unit test, and fixtures.
       m.template 'model:model.rb',      File.join('app/models', class_path, "#{file_name}.rb")
