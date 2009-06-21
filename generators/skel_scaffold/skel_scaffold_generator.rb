@@ -85,7 +85,14 @@ class SkelScaffoldGenerator < Rails::Generator::NamedBase
           File.join('app/views', controller_class_path, controller_file_name, "#{action}.#{default_file_extension}")
         )
       end
-
+      
+      for action in rjs_views
+        m.template(
+          "skel_scaffold:view_#{action}.js.rjs",
+          File.join('app/views', controller_class_path, controller_file_name, "#{action}.js.rjs")
+        )
+      end
+      
       m.template(
         "skel_scaffold:view_partial.#{@default_file_extension}",
         File.join('app/views', controller_class_path, controller_file_name, "_#{file_name}.#{default_file_extension}")
@@ -139,6 +146,10 @@ class SkelScaffoldGenerator < Rails::Generator::NamedBase
       %w[ index show new edit ]
     end
 
+    def rjs_views
+      %w[ create ]
+    end
+    
     def model_name 
       class_name.demodulize
     end
