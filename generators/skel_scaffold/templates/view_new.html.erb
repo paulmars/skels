@@ -2,7 +2,7 @@
 
 <%% form_for(@<%= singular_name %>) do |f| %>
   <%%= f.error_messages %>
-  <%%= render :partial => "<%= plural_name %>/form", :locals => { :<%= singular_name %> => @<%= singular_name %> } %>
+  <%%= render :partial => "<%= plural_name %>/form", :locals => { :f => f } %>
   <%%= f.submit 'Create' %>
 <%% end %>
 
