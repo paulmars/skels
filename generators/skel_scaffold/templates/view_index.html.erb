@@ -1,5 +1,20 @@
 <h1>Listing <%= plural_name %></h1>
 
+
+<%% remote_form_for(:<%= singular_name %>) do |f| %>
+  <%%= f.error_messages %>
+
+<% for attribute in attributes -%>
+  <p>
+    <%%= f.label :<%= attribute.name %> %><br />
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  </p>
+<% end -%>
+  <p>
+    <%%= f.submit 'Create' %>
+  </p>
+<%% end %>
+
 <% for attribute in attributes -%>
   <%= attribute.column.human_name %>
 <% end -%>
