@@ -1,7 +1,7 @@
 Skels
 =====
 
-A scaffold that includes a _form, and partial for the user, remote_form, #create.js.rjs template. 
+A scaffold that includes a _form, and partial for the model, remote_form, #create.js.rjs template. 
 
 Rspecs for all that stuff.
 
