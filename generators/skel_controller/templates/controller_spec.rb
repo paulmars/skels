@@ -57,7 +57,7 @@ class <%= controller_class_name %>Controller < ApplicationController
         flash[:notice] = '<%= class_name %> was successfully updated.'
         format.html { redirect_to(@<%= file_name %>) }
         format.xml  { head :ok }
-        format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @<%= file_name %>.errors, :status => :unprocessable_entity }
