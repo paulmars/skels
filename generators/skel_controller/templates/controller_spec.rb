@@ -6,14 +6,14 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= table_name %> = <%= class_name %>.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @<%= table_name %> }
     end
   end
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @<%= file_name %> }
     end
   end
@@ -22,7 +22,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= file_name %> = <%= class_name %>.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.xml  { render :xml => @<%= file_name %> }
     end
   end
